@@ -8,13 +8,12 @@
 	//window.lampa_settings.read_only = false;
 
 
-	const canvas = document.createElement('canvas');
-    	canvas.width = 200;
-    	canvas.height = 200;
-    	document.body.appendChild(canvas);
-    
-    	const ctx = canvas.getContext('2d');
-    	ctx.fillStyle = 'blue';
-    	ctx.fillRect(0, 0, 200, 200);
+	
+	
+	createCanvas(400, 400);
+	background(30);
+	line(10, 35, 65, 15);
+	Line(65, 15, 110,35);
+	rect(10, 35, 100, 150)
 
 })();
