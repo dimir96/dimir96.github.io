@@ -1,19 +1,2 @@
-(function () {
-	'use strict';
-
-	//Не нужно переписывать весь этот код, не делайте так!
-	//for Lampa.
-	//window.lampa_settings.torrents_use = true;
-	//window.lampa_settings.demo = false;
-	//window.lampa_settings.read_only = false;
-
-
-	
-	
-	createCanvas(400, 400);
-	background(30);
-	line(10, 35, 65, 15);
-	line(65, 15, 110,35);
-	rect(10, 35, 100, 150)
-
-})();
+!function(){"use strict";
+	Lampa.SettingsApi.addParam({component:"interface",param:{name:"logo_glav",type:"select",values:{1:"Скрыть",0:"Отображать"},default:"0"},field:{name:"Логотипы вместо названий",description:"Отображает логотипы фильмов вместо текста"}}),window.logoplugin||(window.logoplugin=!0,Lampa.Listener.follow("full",(function(a){if("complite"==a.type&&"1"!=Lampa.Storage.get("logo_glav")){var e=a.data.movie;var o=Lampa.TMDB.api((e.name ? "tv" : "movie") + "/" + e.id + "/images?api_key=" + Lampa.TMDB.key() + "&language=" + Lampa.Storage.get("language"));$.get(o,(function(a){if(a.logos&&a.logos[0]){var e=a.logos[0].file_path;""!=e&&$(".full-start-new__title").html('<img style="margin-top: 5px;max-height: 125px;" src="'+Lampa.TMDB.image("/t/p/w300"+e.replace(".svg",".png"))+'" />')}}))}})))}();
