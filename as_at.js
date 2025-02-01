@@ -27,10 +27,11 @@
 						var e = a.logos[0].file_path;
 						if (e != "") {
 							$(".full-start-new__title").html(
-								'<img style="margin-top: 5px;max-height: 300px; object-fit: contain;" src="' + Lampa.TMDB.image("/t/p/w300" + e.replace(".svg", ".png")) + '" />'
+								'<img style="margin-top: 5px;max-height: 300px; max-width: 400px;" src="' + Lampa.TMDB.image("/t/p/w300" + e.replace(".svg", ".png")) + '" />'
 							);
 						}
 					}
+
 				});
 			}
 		});
